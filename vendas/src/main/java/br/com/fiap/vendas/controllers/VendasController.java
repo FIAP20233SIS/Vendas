@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.Instant;
+import java.util.List;
 
 @RestController
 public class VendasController {
@@ -30,6 +31,10 @@ public class VendasController {
         BeanUtils.copyProperties(vendaDTO, vendasModel);
         vendasModel.setDtVenda(data);
         return ResponseEntity.status(HttpStatus.CREATED).body(vendasRepository.save(vendasModel));
+    }
+    @GetMapping("/vendas")
+    public ResponseEntity<List<VendasModel>> listarVendas(){
+        return ResponseEntity.status(HttpStatus.OK).body(vendasRepository.findAll());
     }
 
 }
