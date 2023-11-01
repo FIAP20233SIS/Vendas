@@ -24,7 +24,8 @@ public class VendasModel implements Serializable {
     @Column (nullable = false)
     private int idCliente;
 
-    @Column(nullable = false, updatable = false)
+
+	@Column(nullable = false, updatable = false)
     private Instant dtVenda;
 
 
@@ -34,4 +35,9 @@ public class VendasModel implements Serializable {
     @Column (nullable = false)
     private int quantidade;
 
+ 
+
+	public void setDtVenda(Instant dtVenda) {
+		this.dtVenda = dtVenda;
+	}
 }
