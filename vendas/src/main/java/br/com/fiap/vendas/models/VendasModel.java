@@ -34,8 +34,4 @@ public class VendasModel implements Serializable {
     @Column (nullable = false)
     private int quantidade;
 
-	public void setDtVenda(Instant data) {
-		// TODO Auto-generated method stub
-		
-	}
 }
